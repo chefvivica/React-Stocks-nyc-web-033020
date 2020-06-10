@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Stock from '../components/Stock'
+import MyItem from '../components/MyItem'
+
+
 
 class PortfolioContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div >
         <h2>My Portfolio</h2>
-          {
-            //render your portfolio stocks here
-          }
-      </div>
+        {this.props.proStock.map(stock=><MyItem {...stock} key={stock.id} removeItem={this.props.removeItem}/>)}
+      </div >
     );
   }
 
